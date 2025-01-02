@@ -1,0 +1,40 @@
+{
+    "widgets": [{
+            "type": "button",
+            "id": "btn1",
+            "text": "Cliquez-moi"
+        },
+        {
+            "type": "input",
+            "id": "input1",
+            "placeholder": "Entrez votre nom"
+        },
+        {
+            "type": "dropdown",
+            "id": "dropdown1",
+            "options": [
+                { "value": "1", "text": "Option 1" },
+                { "value": "2", "text": "Option 2" },
+                { "value": "3", "text": "Option 3" }
+            ]
+        },
+        {
+            "type": "textarea",
+            "id": "textarea1",
+            "placeholder": "Entrez votre message"
+        },
+        {
+            "type": "checkbox",
+            "id": "checkbox1",
+            "text": "Accepter les termes et conditions"
+        },
+        {
+            "type": "radio",
+            "id": "radio1",
+            "options": [
+                { "value": "yes", "text": "Oui" },
+                { "value": "no", "text": "Non" }
+            ]
+        }
+    ]
+}
