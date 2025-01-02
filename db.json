@@ -4,25 +4,116 @@
             "title": "Page d'accueil",
             "description": "Bienvenue sur la page d'accueil.",
             "widgets": [{
-                    "type": "button",
-                    "id": "btn1",
-                    "text": "Allez à la page suivante",
+                    "type": "header",
+                    "id": "home-header",
+                    "text": "Page d'accueil",
                     "css": {
-                        "background-color": "green",
-                        "color": "white",
-                        "padding": "15px 30px",
-                        "border-radius": "5px"
+                        "font-size": "32px",
+                        "color": "green",
+                        "text-align": "center",
+                        "margin-bottom": "30px"
                     }
                 },
                 {
-                    "type": "input",
-                    "id": "input1",
-                    "placeholder": "Entrez votre nom",
+                    "type": "paragraph",
+                    "id": "home-description",
+                    "text": "Découvrez nos cartes ci-dessous. Cliquez pour en savoir plus !",
                     "css": {
-                        "border": "2px solid #aaa",
-                        "padding": "10px",
-                        "border-radius": "5px"
+                        "font-size": "18px",
+                        "color": "#666",
+                        "text-align": "center"
                     }
+                },
+                {
+                    "type": "section",
+                    "id": "home-cards",
+                    "css": {
+                        "display": "grid",
+                        "grid-template-columns": "repeat(auto-fill, minmax(300px, 1fr))",
+                        "gap": "20px",
+                        "justify-items": "center",
+                        "align-items": "center",
+                        "width": "80%",
+                        "margin": "0 auto",
+                        "min-height": "100vh",
+                        "text-align": "center"
+                    },
+                    "widgets": [{
+                            "type": "card",
+                            "id": "card1",
+                            "image": "https://via.placeholder.com/300x200",
+                            "title": "Titre de la Carte 1",
+                            "description": "Une description simple de cette carte pour attirer l'attention.",
+                            "button": {
+                                "text": "En savoir plus",
+                                "css": {
+                                    "background-color": "green",
+                                    "color": "white",
+                                    "padding": "15px 30px",
+                                    "border-radius": "5px",
+                                    "cursor": "pointer"
+                                }
+                            },
+                            "css": {
+                                "width": "300px",
+                                "border-radius": "10px",
+                                "box-shadow": "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                                "overflow": "hidden",
+                                "text-align": "center",
+                                "margin-bottom": "20px"
+                            }
+                        },
+                        {
+                            "type": "card",
+                            "id": "card2",
+                            "image": "https://via.placeholder.com/300x200",
+                            "title": "Titre de la Carte 2",
+                            "description": "Découvrez des détails intéressants sur cette carte.",
+                            "button": {
+                                "text": "En savoir plus",
+                                "css": {
+                                    "background-color": "green",
+                                    "color": "white",
+                                    "padding": "15px 30px",
+                                    "border-radius": "5px",
+                                    "cursor": "pointer"
+                                }
+                            },
+                            "css": {
+                                "width": "300px",
+                                "border-radius": "10px",
+                                "box-shadow": "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                                "overflow": "hidden",
+                                "text-align": "center",
+                                "margin-bottom": "20px"
+                            }
+                        },
+                        {
+                            "type": "card",
+                            "id": "card3",
+                            "image": "https://via.placeholder.com/300x200",
+                            "title": "Titre de la Carte 3",
+                            "description": "Ajoutez une petite description pour rendre cette carte attrayante.",
+                            "button": {
+                                "text": "En savoir plus",
+                                "css": {
+                                    "background-color": "green",
+                                    "color": "white",
+                                    "padding": "15px 30px",
+                                    "border-radius": "5px",
+                                    "cursor": "pointer"
+                                }
+                            },
+                            "css": {
+                                "width": "300px",
+                                "border-radius": "10px",
+                                "box-shadow": "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                                "overflow": "hidden",
+                                "text-align": "center",
+                                "margin-bottom": "20px"
+                            }
+                        }
+                    ]
                 }
             ]
         },
