@@ -1,0 +1,14 @@
+<div *ngIf="pageData">
+    <h1>{{ pageData.title }}</h1>
+    <p>{{ pageData.description }}</p>
+
+    <div *ngFor="let widget of pageData.widgets" class="widget-container">
+        <ng-container [ngSwitch]="widget.type">
+            <button *ngSwitchCase="'button'" [id]="widget.id" [ngStyle]="widget.css">
+        {{ widget.text }}
+      </button>
+
+            <input *ngSwitchCase="'input'" [id]="widget.id" [placeholder]="widget.placeholder" [ngStyle]="widget.css" type="text" />
+        </ng-container>
+    </div>
+</div>

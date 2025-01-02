@@ -1,22 +1,2 @@
-<div class="container mt-5">
-    <h1>Widgets</h1>
-
-    <div *ngFor="let widget of widgets" class="mb-3">
-        <ng-container [ngSwitch]="widget.type">
-            <!-- Button -->
-            <button *ngSwitchCase="'button'" [id]="widget.id" [ngStyle]="widget.css">
-        {{ widget.text }}
-      </button>
-
-            <!-- Input -->
-            <input *ngSwitchCase="'input'" [id]="widget.id" [placeholder]="widget.placeholder" [ngStyle]="widget.css" type="text" />
-
-            <!-- Dropdown -->
-            <select *ngSwitchCase="'dropdown'" [id]="widget.id" [ngStyle]="widget.css">
-        <option *ngFor="let option of widget.options" [value]="option.value">
-          {{ option.text }}
-        </option>
-      </select>
-        </ng-container>
-    </div>
-</div>
+<app-nav></app-nav>
+<router-outlet></router-outlet>
