@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceService } from '../../Services/service.service';
+import { ServiceService, Widget } from '../../Services/service.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -17,6 +17,15 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     this.widgetService.getPageData('about').subscribe((data) => {
       this.pageData = data; // Set the page data for about
+      console.log('about data page', data);
+      console.log('about data page widget', this.pageData.widgets);
+      // Loop through widgets and check for sections
+      this.pageData.widgets.forEach((widget: any) => {
+        if (widget.type === 'section') {
+          console.log('Section found: ', widget);
+          console.log('Section found widegts: ', widget.widgets);
+        }
+      });
     });
   }
 }

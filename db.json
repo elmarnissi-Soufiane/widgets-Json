@@ -31,16 +31,112 @@
             "title": "À propos",
             "description": "Ceci est une page d'information.",
             "widgets": [{
-                "type": "button",
-                "id": "btnAbout",
-                "text": "Contactez-nous",
-                "css": {
-                    "background-color": "blue",
-                    "color": "white",
-                    "padding": "10px 20px",
-                    "border-radius": "5px"
+                    "type": "header",
+                    "id": "about-header",
+                    "text": "About Us",
+                    "css": {
+                        "font-size": "32px",
+                        "color": "green",
+                        "text-align": "center",
+                        "margin-bottom": "30px"
+                    }
+                },
+                {
+                    "type": "paragraph",
+                    "id": "about-paragraph",
+                    "text": "Welcome to our website! We aim to deliver the best experience for our users.",
+                    "css": {
+                        "font-size": "16px",
+                        "color": "#666",
+                        "text-align": "center"
+                    }
+                },
+                {
+                    "type": "section",
+                    "id": "contact-section",
+                    "title": "Contact Us",
+                    "widgets": [{
+                        "type": "form",
+                        "id": "contact-form",
+                        "action": "/submit",
+                        "method": "POST",
+                        "css": {
+                            "display": "flex",
+                            "flex-direction": "column",
+                            "justify-content": "center",
+                            "align-items": "center",
+                            "position": "absolute",
+                            "top": "50%",
+                            "left": "50%",
+                            "transform": "translate(-50%, -50%)",
+                            "width": "400px",
+                            "padding": "20px",
+                            "background-color": "white",
+                            "border-radius": "8px",
+                            "box-shadow": "0px 4px 6px rgba(0, 0, 0, 0.1)"
+                        },
+                        "widgets": [{
+                                "type": "input",
+                                "id": "name-input",
+                                "name": "name",
+                                "placeholder": "Your name",
+                                "css": {
+                                    "width": "100%",
+                                    "padding": "10px",
+                                    "font-size": "14px",
+                                    "border": "1px solid #ddd",
+                                    "border-radius": "4px",
+                                    "box-sizing": "border-box"
+                                }
+                            },
+                            {
+                                "type": "input",
+                                "id": "email-input",
+                                "name": "email",
+                                "placeholder": "Your email",
+                                "css": {
+                                    "width": "100%",
+                                    "padding": "10px",
+                                    "font-size": "14px",
+                                    "border": "1px solid #ddd",
+                                    "border-radius": "4px",
+                                    "box-sizing": "border-box"
+                                }
+                            },
+                            {
+                                "type": "textarea",
+                                "id": "message-input",
+                                "name": "message",
+                                "placeholder": "Your message",
+                                "css": {
+                                    "width": "100%",
+                                    "padding": "10px",
+                                    "font-size": "14px",
+                                    "border": "1px solid #ddd",
+                                    "border-radius": "4px",
+                                    "box-sizing": "border-box"
+                                },
+                                "rows": 4
+                            },
+                            {
+                                "type": "button",
+                                "id": "submit-button",
+                                "text": "Submit",
+                                "css": {
+                                    "background-color": "#1e90ff",
+                                    "color": "white",
+                                    "padding": "10px 15px",
+                                    "font-size": "16px",
+                                    "border": "none",
+                                    "border-radius": "4px",
+                                    "cursor": "pointer",
+                                    "transition": "background-color 0.3s"
+                                }
+                            }
+                        ]
+                    }]
                 }
-            }]
+            ]
         }
     ]
 }

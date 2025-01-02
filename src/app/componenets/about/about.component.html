@@ -2,13 +2,39 @@
     <h1>{{ pageData.title }}</h1>
     <p>{{ pageData.description }}</p>
 
-    <div *ngFor="let widget of pageData.widgets" class="widget-container">
-        <ng-container [ngSwitch]="widget.type">
-            <button *ngSwitchCase="'button'" [id]="widget.id" [ngStyle]="widget.css">
-        {{ widget.text }}
-      </button>
+    <!-- Iterate through widgets in page -->
+    <div *ngFor="let widget of pageData.widgets">
+        <div *ngIf="widget.type === 'header'" [ngStyle]="widget.css">
+            <h2>{{ widget.text }}</h2>
+        </div>
 
-            <input *ngSwitchCase="'input'" [id]="widget.id" [placeholder]="widget.placeholder" [ngStyle]="widget.css" type="text" />
-        </ng-container>
+        <div *ngIf="widget.type === 'paragraph'" [ngStyle]="widget.css">
+            <p>{{ widget.text }}</p>
+        </div>
+
+        <div *ngIf="widget.type === 'section'">
+            <div [id]="widget.id">
+                <h3>{{ widget.title }}</h3>
+                <div *ngFor="let sectionWidget of widget.widgets">
+                    <div *ngIf="sectionWidget.type === 'form'">
+                        <form [action]="sectionWidget.action" [method]="sectionWidget.method">
+                            <div *ngFor="let formWidget of sectionWidget.widgets">
+                                <div *ngIf="formWidget.type === 'input'">
+                                    <input [id]="formWidget.id" [name]="formWidget.name" [placeholder]="formWidget.placeholder" [ngStyle]="formWidget.css" />
+                                </div>
+                                <div *ngIf="formWidget.type === 'textarea'">
+                                    <textarea [id]="formWidget.id" [name]="formWidget.name" [placeholder]="formWidget.placeholder" [ngStyle]="formWidget.css" [rows]="formWidget.rows"></textarea>
+                                </div>
+                                <div *ngIf="formWidget.type === 'button'">
+                                    <button [id]="formWidget.id" [ngStyle]="formWidget.css">
+                    {{ formWidget.text }}
+                  </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
