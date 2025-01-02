@@ -1,40 +1,22 @@
-<div>
+<div class="container mt-5">
     <h1>Widgets</h1>
-    <div *ngFor="let widget of widgets">
+
+    <div *ngFor="let widget of widgets" class="mb-3">
         <ng-container [ngSwitch]="widget.type">
             <!-- Button -->
-            <button *ngSwitchCase="'button'" [id]="widget.id">
+            <button *ngSwitchCase="'button'" [id]="widget.id" [ngStyle]="widget.css">
         {{ widget.text }}
       </button>
 
             <!-- Input -->
-            <input *ngSwitchCase="'input'" [id]="widget.id" [placeholder]="widget.placeholder" type="text" />
+            <input *ngSwitchCase="'input'" [id]="widget.id" [placeholder]="widget.placeholder" [ngStyle]="widget.css" type="text" />
 
             <!-- Dropdown -->
-            <select *ngSwitchCase="'dropdown'" [id]="widget.id">
+            <select *ngSwitchCase="'dropdown'" [id]="widget.id" [ngStyle]="widget.css">
         <option *ngFor="let option of widget.options" [value]="option.value">
           {{ option.text }}
         </option>
       </select>
-
-            <!-- Textarea -->
-            <textarea *ngSwitchCase="'textarea'" [id]="widget.id" [placeholder]="widget.placeholder"></textarea>
-
-            <!-- Checkbox -->
-            <label *ngSwitchCase="'checkbox'" [for]="widget.id">
-        <input type="checkbox" [id]="widget.id" />
-        {{ widget.text }}
-      </label>
-
-            <!-- Radio -->
-            <div *ngSwitchCase="'radio'" [id]="widget.id">
-                <div *ngFor="let option of widget.options">
-                    <label>
-            <input type="radio" [name]="widget.id" [value]="option.value" />
-            {{ option.text }}
-          </label>
-                </div>
-            </div>
         </ng-container>
     </div>
 </div>

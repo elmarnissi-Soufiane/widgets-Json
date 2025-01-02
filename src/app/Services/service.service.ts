@@ -8,6 +8,7 @@ export interface Widget {
   text?: string;
   placeholder?: string;
   options?: { value: string; text: string }[];
+  css?: { [key: string]: string }; // CSS styles for the widget
 }
 
 @Injectable({

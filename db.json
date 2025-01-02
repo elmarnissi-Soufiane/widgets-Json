@@ -2,39 +2,36 @@
     "widgets": [{
             "type": "button",
             "id": "btn1",
-            "text": "Cliquez-moi"
+            "text": "Cliquez-moi",
+            "css": {
+                "background-color": "blue",
+                "color": "white",
+                "padding": "10px 20px",
+                "border-radius": "5px"
+            }
         },
         {
             "type": "input",
             "id": "input1",
-            "placeholder": "Entrez votre nom"
+            "placeholder": "Entrez votre nom",
+            "css": {
+                "border": "2px solid #ccc",
+                "padding": "10px",
+                "border-radius": "5px"
+            }
         },
         {
             "type": "dropdown",
             "id": "dropdown1",
             "options": [
                 { "value": "1", "text": "Option 1" },
-                { "value": "2", "text": "Option 2" },
-                { "value": "3", "text": "Option 3" }
-            ]
-        },
-        {
-            "type": "textarea",
-            "id": "textarea1",
-            "placeholder": "Entrez votre message"
-        },
-        {
-            "type": "checkbox",
-            "id": "checkbox1",
-            "text": "Accepter les termes et conditions"
-        },
-        {
-            "type": "radio",
-            "id": "radio1",
-            "options": [
-                { "value": "yes", "text": "Oui" },
-                { "value": "no", "text": "Non" }
-            ]
+                { "value": "2", "text": "Option 2" }
+            ],
+            "css": {
+                "width": "200px",
+                "padding": "10px",
+                "border-radius": "5px"
+            }
         }
     ]
 }

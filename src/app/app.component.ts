@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { ServiceService } from './Services/service.service';
+import { CommonModule } from '@angular/common';
 
 interface Widget {
   type: string;
@@ -9,16 +8,17 @@ interface Widget {
   text?: string;
   placeholder?: string;
   options?: { value: string; text: string }[];
+  css?: { [key: string]: string }; // Store CSS styles here
 }
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [CommonModule],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   widgets: Widget[] = [];
 
   constructor(private widgetService: ServiceService) {}
@@ -27,7 +27,7 @@ export class AppComponent {
     this.widgetService.getWidgets().subscribe(
       (data) => {
         this.widgets = data;
-        console.log('data', data);
+        console.log('data widgets : ', data);
       },
       (error) => {
         console.error('Error loading widgets:', error);
