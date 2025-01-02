@@ -30,4 +30,9 @@ export class HomeComponent implements OnInit {
       });
     });
   }
+
+  // Simple alert when button is clicked
+  showAlert(sectionWidget: any): void {
+    alert('You clicked on card: ' + sectionWidget.title);
+  }
 }

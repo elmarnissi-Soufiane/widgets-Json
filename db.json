@@ -41,7 +41,7 @@
                     "widgets": [{
                             "type": "card",
                             "id": "card1",
-                            "image": "https://via.placeholder.com/300x200",
+                            "image": "https://picsum.photos/200/300",
                             "title": "Titre de la Carte 1",
                             "description": "Une description simple de cette carte pour attirer l'attention.",
                             "button": {
@@ -52,7 +52,8 @@
                                     "padding": "15px 30px",
                                     "border-radius": "5px",
                                     "cursor": "pointer"
-                                }
+                                },
+                                "event": "navigateToCardDetails"
                             },
                             "css": {
                                 "width": "300px",
@@ -66,7 +67,7 @@
                         {
                             "type": "card",
                             "id": "card2",
-                            "image": "https://via.placeholder.com/300x200",
+                            "image": "https://fastly.picsum.photos/id/388/200/300.jpg?hmac=FqnHWJj6cpEwyS23t-YvE6ouWqr3LEKTKMo4ohOrTUI",
                             "title": "Titre de la Carte 2",
                             "description": "Découvrez des détails intéressants sur cette carte.",
                             "button": {
@@ -77,7 +78,8 @@
                                     "padding": "15px 30px",
                                     "border-radius": "5px",
                                     "cursor": "pointer"
-                                }
+                                },
+                                "event": "navigateToCardDetails"
                             },
                             "css": {
                                 "width": "300px",
@@ -91,7 +93,7 @@
                         {
                             "type": "card",
                             "id": "card3",
-                            "image": "https://via.placeholder.com/300x200",
+                            "image": "https://fastly.picsum.photos/id/1049/200/300.jpg?hmac=IwgFpI60m03JoXBvIB_0oA12YR8cNaSel6lUvKhQvF0",
                             "title": "Titre de la Carte 3",
                             "description": "Ajoutez une petite description pour rendre cette carte attrayante.",
                             "button": {
@@ -102,7 +104,8 @@
                                     "padding": "15px 30px",
                                     "border-radius": "5px",
                                     "cursor": "pointer"
-                                }
+                                },
+                                "event": "navigateToCardDetails"
                             },
                             "css": {
                                 "width": "300px",

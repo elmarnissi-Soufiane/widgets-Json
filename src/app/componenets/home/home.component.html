@@ -13,7 +13,7 @@
                         <img [src]="sectionWidget.image" alt="Card image" />
                         <h2>{{ sectionWidget.title }}</h2>
                         <p>{{ sectionWidget.description }}</p>
-                        <button [ngStyle]="sectionWidget.button.css">
+                        <button [ngStyle]="sectionWidget.button.css" (click)="showAlert(sectionWidget)">
               {{ sectionWidget.button.text }}
             </button>
                     </div>
