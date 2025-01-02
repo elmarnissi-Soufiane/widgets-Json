@@ -13,9 +13,6 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   pageData: any; // To hold page data
-  header: any; // Pour stocker l'en-tête
-  paragraph: any; // Pour stocker le paragraphe
-  section: any; // Pour stocker la section des cartes
 
   constructor(private widgetService: ServiceService, private router: Router) {}
 

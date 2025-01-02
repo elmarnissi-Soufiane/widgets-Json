@@ -1,4 +1,8 @@
-<nav class="navbar">
-    <a class="nav-link" (click)="switchToHome()">Home</a>
-    <a class="nav-link" (click)="switchToAbout()">About</a>
+<!-- nav.component.html -->
+<nav *ngIf="pageData">
+    <div class="nav-container" [ngStyle]="pageData.widgets[0].css">
+        <a *ngFor="let link of pageData.widgets[0].links" [routerLink]="link.url" [ngStyle]="link.css">
+      {{ link.text }}
+    </a>
+    </div>
 </nav>

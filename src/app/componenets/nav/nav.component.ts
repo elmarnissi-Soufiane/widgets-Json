@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { ServiceService } from '../../Services/service.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterLink],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
 })
 export class NavComponent implements OnInit {
-  constructor(private router: Router) {}
+  pageData: any; // To hold page data
 
-  ngOnInit(): void {}
+  constructor(private widgetService: ServiceService, private router: Router) {}
 
-  switchToHome() {
-    this.router.navigateByUrl('/home');
-  }
+  ngOnInit(): void {
+    this.widgetService.getPageData('nav').subscribe((data) => {
+      this.pageData = data; // Set the page data for home
 
-  switchToAbout() {
-    this.router.navigateByUrl('/about');
+      console.log('data Nav', data);
+    });
   }
 }

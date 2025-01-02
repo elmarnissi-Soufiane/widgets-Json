@@ -228,6 +228,53 @@
                     }]
                 }
             ]
+        },
+        {
+            "id": "nav",
+            "title": "Navigation",
+            "description": "Page de navigation avec les liens principaux.",
+            "widgets": [{
+                "type": "nav",
+                "id": "main-nav",
+                "links": [{
+                        "text": "Page d'accueil",
+                        "url": "/home",
+                        "css": {
+                            "font-size": "18px",
+                            "color": "green",
+                            "text-decoration": "none",
+                            "padding": "10px"
+                        }
+                    },
+                    {
+                        "text": "À propos",
+                        "url": "/about",
+                        "css": {
+                            "font-size": "18px",
+                            "color": "green",
+                            "text-decoration": "none",
+                            "padding": "10px"
+                        }
+                    },
+                    {
+                        "text": "Contact",
+                        "url": "/contact",
+                        "css": {
+                            "font-size": "18px",
+                            "color": "green",
+                            "text-decoration": "none",
+                            "padding": "10px"
+                        }
+                    }
+                ],
+                "css": {
+                    "display": "flex",
+                    "justify-content": "center",
+                    "background-color": "#f4f4f4",
+                    "padding": "10px",
+                    "box-shadow": "0px 4px 6px rgba(0, 0, 0, 0.1)"
+                }
+            }]
         }
     ]
 }
