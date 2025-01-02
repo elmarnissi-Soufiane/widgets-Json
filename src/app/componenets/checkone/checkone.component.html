@@ -1,0 +1,85 @@
+<div id="notifications"></div>
+<div class="container dashboard">
+  <ul class="secondMenu" *ngIf="isActiveBtn == true">
+    <li>
+      <a
+        class="btn btn-success"
+        href="javascript::void(0)"
+        (click)="clearStepDataAndMove()"
+        translate=""
+      >
+        <span
+          ><i class="icon fa fa-pencil" aria-hidden="true"></i>&nbsp;Rédiger une
+          proposition</span
+        >
+      </a>
+    </li>
+    <li>
+      <a
+        class="btn btn-success"
+        href="https://five-insurance.be/apps/simulateur/"
+        target="_blank"
+        translate=""
+      >
+        <span
+          ><i class="icon fa fa-building" aria-hidden="true"></i
+          >&nbsp;Évaluation bâtiment</span
+        >
+      </a>
+    </li>
+    <li>
+      <a
+        class="btn btn-success"
+        href="https://courtier.five-insurance.be/certificat-dassurance/"
+        target="_blank"
+        translate=""
+      >
+        <span
+          ><i class="icon fa fa-car" aria-hidden="true"></i>&nbsp;Certificat
+          d'assurances provisoire</span
+        >
+      </a>
+    </li>
+    <li>
+      <a
+        class="btn btn-success"
+        href="https://courtier.five-insurance.be/"
+        target="_blank"
+        translate=""
+      >
+        <span
+          ><i class="icon fa fa-rss" aria-hidden="true"></i>&nbsp;Documents et
+          ressources</span
+        >
+      </a>
+    </li>
+  </ul>
+  <div id="mainTabs">
+    <ul class="nav nav-tabs">
+      <li class="" [ngClass]="{ active: activateTab == 1 }">
+        <a (click)="updateTab(1)" class="" routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li class="" [ngClass]="{ active: activateTab == 2 }">
+        <a (click)="updateTab(2)" class="" routerLink="/packs">Packs</a>
+      </li>
+      <li class="" [ngClass]="{ active: activateTab == 3 }">
+        <a (click)="updateTab(3)" class="" routerLink="/enattente"
+          >En attente</a
+        >
+      </li>
+      <li class="" [ngClass]="{ active: activateTab == 5 }">
+        <a (click)="updateTab(5)" class="" routerLink="/comptabilite"
+          >Comptabilité</a
+        >
+      </li>
+      <li class="" [ngClass]="{ active: activateTab == 6 }">
+        <a (click)="updateTab(6)" class="" routerLink="/bordereaux"
+          >Bordereaux</a
+        >
+      </li>
+      <li class="" [ngClass]="{ active: activateTab == 7 }">
+        <a (click)="updateTab(7)" class="" routerLink="/sinistres">Sinistres</a>
+      </li>
+    </ul>
+  </div>
+</div>

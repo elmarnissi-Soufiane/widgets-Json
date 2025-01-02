@@ -1,0 +1,86 @@
+<div class="dashboard-tab">
+  <div class="container" id="dashboard">
+    <div class="row">
+      <!-- Portefeuille actif -->
+      <div class="col-md-6">
+        <fieldset class="chart-container">
+          <legend><span>Portefeuille actif</span></legend>
+          <div class="row">
+            <div class="col-sm-7">
+              <ul class="data list-unstyled">
+                <li>
+                  <span class="text">Packs souscrits ces 3 derniers mois</span>
+                  <span class="number">{{ packSouscritsCes3 }}</span>
+                </li>
+                <li>
+                  <span class="text">Packs actifs</span>
+                  <span class="number">{{ PacksActifs }}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-5">
+              <canvas
+                *ngIf="isPortefeuilleChartLoaded"
+                baseChart
+                [data]="doughnutChartData"
+                [type]="doughnutChartType"
+                [options]="doughnutChartOptions"
+                style="width: 300px; height: 300px"
+              ></canvas>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Transformation propositions/contrats -->
+      <div class="col-md-6">
+        <fieldset class="chart-container">
+          <legend><span>Transformation propositions/contrats</span></legend>
+          <div class="row">
+            <div class="col-sm-7">
+              <ul class="data list-unstyled">
+                <li>
+                  <span class="text">Propositions sauvegardées</span>
+                  <span class="number">{{ tPropositionsSauvegardes }}</span>
+                </li>
+                <li>
+                  <span class="text">Transformations en Packs</span>
+                  <span class="number">{{ tTransformationsPacks }}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-5">
+              <canvas
+                *ngIf="isSecondChartLoader"
+                baseChart
+                [data]="tdoughnutChartData"
+                [type]="tdoughnutChartType"
+                [options]="doughnutChartOptions"
+                style="width: 300px; height: 300px"
+              ></canvas>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Primes impayées -->
+      <div class="col-md-6">
+        <fieldset class="chart-container">
+          <legend><span>Primes impayées</span></legend>
+          <ul class="data list-unstyled">
+            <li>
+              <span class="text">Rappel</span>
+              <span class="number">{{ rappel }} €</span>
+            </li>
+            <li>
+              <span class="text">Mise en demeure</span>
+              <span class="number">{{ miseEnDemeure }} €</span>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
