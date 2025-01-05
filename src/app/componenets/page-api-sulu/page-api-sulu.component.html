@@ -1,0 +1,19 @@
+<div *ngIf="pageData">
+  <h1>{{ pageData.content.title }}</h1>
+
+  <div [innerHTML]="pageData.content.content"></div>
+
+  <p><strong>Locale:</strong> {{ pageData.meta?.locale || 'Non défini' }}</p>
+
+  <p><strong>Changed:</strong>
+    {{ pageData.meta?.changed?.date ? (pageData.meta.changed.date | date: 'short') : 'Non défini' }}</p>
+
+
+  <p><strong>Changed:</strong>
+    {{ pageData.meta?.changed?.date ? (pageData.meta.changed.date | date: 'short') : 'Non défini' }}</p>
+
+</div>
+
+<div *ngIf="!pageData">
+  <p>Chargement des données...</p>
+</div>

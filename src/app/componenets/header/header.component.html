@@ -1,0 +1,25 @@
+<header id="header">
+  <h1 class="site-title container"><a href="/dashboard" rel="home">Five Insurance Company</a></h1>
+  <nav id="menu-top">
+    <!-- <a class="menu-open small" href="" translate>Menu</a> -->
+
+    <ul *ngIf="isUserLoggedIn">
+      <li class="acces-courtier logged-in">
+        <a href="#" class="ng-binding">
+          <span translate=""><span>Bienvenue</span></span>, {{firstName}} {{lastName}}&nbsp;<span class="caret"></span>
+        </a>
+        <ul>
+          <li><a [routerLink]="['/dashboard']" translate=""><span>Dashboard</span></a></li>
+          <li><a href="#" (click)="logout()" translate=""><span>Déconnexion</span></a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul *ngIf="!isUserLoggedIn">
+      <li class="hidden-xs hidden-sm"><a href="http://www.five-insurance.be/courtiers/"><strong translate>Vous
+            êtes courtier ?</strong> <span translate>Vous souhaitez conserver votre indépendance&nbsp;?</span>
+          <strong translate>Cliquez ici</strong></a></li>
+      <li class="acces-courtier"><a href="#fs-login" translate>{{title}}</a></li>
+    </ul>
+  </nav>
+</header>

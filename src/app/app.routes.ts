@@ -4,7 +4,7 @@ import { AboutComponent } from './componenets/about/about.component';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './componenets/contact/contact.component';
 import { CheckoneComponent } from './componenets/checkone/checkone.component';
-import { ChecktwoComponent } from './componenets/checktwo/checktwo.component';
+import { PageApiSuluComponent } from './componenets/page-api-sulu/page-api-sulu.component';
 
 export const routes: Routes = [
   { path: '', component: AppComponent },
@@ -12,5 +12,5 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'checkone', component: CheckoneComponent },
-  { path: 'checktwo', component: ChecktwoComponent },
+  { path: 'api', component: PageApiSuluComponent },
 ];

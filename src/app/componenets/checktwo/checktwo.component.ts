@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartType, ChartData } from 'chart.js';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-checktwo',
   standalone: true,
-  imports: [NgChartsModule, CommonModule],
+  imports: [NgChartsModule, CommonModule, FooterComponent],
   templateUrl: './checktwo.component.html',
   styleUrls: ['./checktwo.component.css'],
 })

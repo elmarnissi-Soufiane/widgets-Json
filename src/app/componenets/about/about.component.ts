@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 export class AboutComponent implements OnInit {
   pageData: any; // To hold page data
 
-  constructor(private widgetService: ServiceService) {}
+  constructor(private widgetService: ServiceService) { }
 
   ngOnInit(): void {
     this.widgetService.getPageData('about').subscribe((data) => {

@@ -1,15 +1,11 @@
+<app-header></app-header>
+
 <div id="notifications"></div>
 <div class="container dashboard">
-  <ul class="secondMenu" *ngIf="isActiveBtn == true">
-    <li>
-      <a
-        class="btn btn-success"
-        href="javascript::void(0)"
-        (click)="clearStepDataAndMove()"
-        translate=""
-      >
-        <span
-          ><i class="icon fa fa-pencil" aria-hidden="true"></i>&nbsp;Rédiger une
+    <ul class="secondMenu" *ngIf="isActiveBtn == true">
+        <li>
+            <a class="btn btn-success" href="javascript::void(0)" (click)="clearStepDataAndMove()" translate="">
+                <span><i class="icon fa fa-pencil" aria-hidden="true"></i>&nbsp;Rédiger une
           proposition</span
         >
       </a>

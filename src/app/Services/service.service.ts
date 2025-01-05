@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, throwError } from 'rxjs';
 
 export interface Widget {
   type: string;
@@ -15,9 +15,18 @@ export interface Widget {
   providedIn: 'root',
 })
 export class ServiceService {
+  //private jsonUrl = 'http://localhost:3000';
   private jsonUrl = 'http://localhost:3000/pages';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
+
+  //Method to get data for a specific page from the API
+  getPageData(pageId: string): Observable<any> {
+    return this.http.get<any[]>(this.jsonUrl).pipe(
+      map((data: any) => data.find((page: any) => page.id === pageId)) // Find the page by ID
+    );
+  }
+
   // getWidgets(): Observable<Widget[]> {
   //   return this.http.get<Widget[]>(this.jsonUrl);
   // }
@@ -29,10 +38,28 @@ export class ServiceService {
   //   );
   // }
 
-  // Method to get data for a specific page from the API
-  getPageData(pageId: string): Observable<any> {
-    return this.http.get<any[]>(this.jsonUrl).pipe(
-      map((data: any) => data.find((page: any) => page.id === pageId)) // Find the page by ID
-    );
-  }
+
+
+  // URL de l'API du backend
+  // private apiUrl = 'http://localhost:8000/json-response';
+
+  // constructor(private http: HttpClient) { }
+
+  // // Récupérer les données de la page depuis l'API
+  // getPageData(): Observable<any> {
+  //   return this.http.get<any>(this.apiUrl); // Effectuer la requête GET à l'URL du backend
+  // }
+
+  // getPageDataApi(): Observable<any> {
+  //   return this.http.get(`${this.jsonUrl}/page`);
+  // }
+  // private handleError(error: HttpErrorResponse): Observable<never> {
+  //   if (error.error instanceof ErrorEvent) {
+  //     console.error('Client-side error:', error.error.message);
+  //   } else {
+  //     console.error(`Server-side error: ${error.status} - ${error.message}`);
+  //   }
+  //   return throwError(() => new Error('An error occurred; please try again later.'));
+  // }
+
 }
