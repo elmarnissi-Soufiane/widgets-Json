@@ -41,14 +41,20 @@ export class ServiceService {
 
 
   // URL de l'API du backend
-  // private apiUrl = 'http://localhost:8000/json-response';
-
-  // constructor(private http: HttpClient) { }
+  //private apiUrl = 'http://localhost:8000/json-response';
+  // private apiUrl = 'http://localhost:8000/hello-titile-one-from-fatima';
 
   // // Récupérer les données de la page depuis l'API
-  // getPageData(): Observable<any> {
-  //   return this.http.get<any>(this.apiUrl); // Effectuer la requête GET à l'URL du backend
+  // getPageDataContentSulu(): Observable<any> {
+  //   return this.http.get<any>(this.apiUrl);
   // }
+
+  private baseUrl = 'http://localhost:8000';
+  // Fonction pour appeler une API avec une partie dynamique
+  getData(dynamicPart: string): Observable<any> {
+    const url = `${this.baseUrl}/${dynamicPart}`; // Construction de l'URL dynamique
+    return this.http.get(url); // Appel HTTP GET
+  }
 
   // getPageDataApi(): Observable<any> {
   //   return this.http.get(`${this.jsonUrl}/page`);

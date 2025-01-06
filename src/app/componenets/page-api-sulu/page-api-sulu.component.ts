@@ -18,12 +18,12 @@ export class PageApiSuluComponent implements OnInit {
   constructor(private service: ServiceService
   ) { }
 
-  ngOnInit(): void {
-    this.service.getPageData(this.pageId).subscribe((data) => {
-      this.pageData = data;
-      console.log('Page data:', data);
-    });
-  }
+  // ngOnInit(): void {
+  //   this.service.getPageData(this.pageId).subscribe((data) => {
+  //     this.pageData = data;
+  //     console.log('Page data:', data);
+  //   });
+  // }
 
   // ngOnInit(): void {
   //   this.service.getPageDataApi().subscribe(
@@ -37,23 +37,28 @@ export class PageApiSuluComponent implements OnInit {
   //   );
   // }
 
+  // Solution APi
   // ngOnInit(): void {
   //   // Appeler le service pour récupérer les données de la page
-  //   this.service.getPageData().subscribe((data) => {
+  //   this.service.getPageDataContentSulu().subscribe((data) => {
   //     this.pageData = data; // Assigner les données récupérées à pageData
   //     console.log('Données de la page:', data);
   //     console.log('Widgets de la page:', this.pageData.widgets);
-
-  //     // Vérifier les widgets et afficher ceux de type "section"
-  //     if (this.pageData && this.pageData.widgets) {
-  //       this.pageData.widgets.forEach((widget: any) => {
-  //         if (widget.type === 'section') {
-  //           console.log('Section trouvée:', widget);
-  //           console.log('Widgets dans la section:', widget.widgets);
-  //         }
-  //       });
-  //     }
   //   });
   // }
+
+  ngOnInit(): void {
+    const dynamicPart = 'team'; // Partie dynamique de l'URL
+
+    this.service.getData(dynamicPart).subscribe({
+      next: (response) => {
+        this.pageData = response; // Stocke la réponse de l'API
+        console.log(this.pageData); // Affiche les données dans la console
+      },
+      error: (error) => {
+        console.error('Erreur lors de l\'appel API :', error);
+      },
+    });
+  }
 
 }
