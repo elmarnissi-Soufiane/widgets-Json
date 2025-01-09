@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, throwError } from 'rxjs';
+import { map, Observable, of, throwError } from 'rxjs';
 
 export interface Widget {
   type: string;
@@ -67,5 +67,10 @@ export class ServiceService {
   //   }
   //   return throwError(() => new Error('An error occurred; please try again later.'));
   // }
+
+  private apiUrlSulu = 'http://localhost:8000/bnjr-tous';
+  getPageDataSulu(): Observable<any> {
+    return this.http.get<any>(this.apiUrlSulu);
+  }
 
 }
