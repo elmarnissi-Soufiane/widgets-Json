@@ -1,0 +1,17 @@
+<div *ngIf="isLoading">
+  <p>Loading page data...</p>
+</div>
+
+<div *ngIf="error">
+  <p class="error">{{ error }}</p>
+</div>
+
+<div *ngIf="pageData && !isLoading && !error">
+  <h1>{{ pageData.content?.title || 'No Title' }}</h1>
+  <div [innerHTML]="pageData.content?.article || 'No Article Content'"></div>
+
+  <p><strong>URL:</strong> {{ pageData.content?.url || 'Not Available' }}</p>
+  <p><strong>Created:</strong> {{ pageData.created ? (pageData.created | date: 'short') : 'Not Available' }}</p>
+  <p><strong>Changed:</strong> {{ pageData.changed ? (pageData.changed | date: 'short') : 'Not Available' }}</p>
+
+</div>
