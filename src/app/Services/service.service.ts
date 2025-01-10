@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of, throwError } from 'rxjs';
 
@@ -72,5 +72,60 @@ export class ServiceService {
   getPageDataSulu(): Observable<any> {
     return this.http.get<any>(this.apiUrlSulu);
   }
+
+
+  private apiUrlSuluAuth = 'http://localhost:8000/admin/api/pages';
+  // Méthode pour récupérer les données d'une page spécifique
+  getPageDataApiSulu(pageId: string, locale: string): Observable<any> {
+    const url = `${this.apiUrlSuluAuth}/${pageId}?locale=${locale}`;
+    return this.http.get(url, {
+      withCredentials: true, // Inclure les cookies pour l'authentification
+    });
+  }
+
+  // //private apiUrlSuluAuth = 'http://localhost:8000/admin/api/pages/55d0367c-5738-40f5-995f-7fee88448374?locale=en';
+  // // getPageDataSuluAuthAdmin(): Observable<any> {
+  // //   return this.http.get<any>(this.apiUrlSuluAuth);
+  // // }
+  // private baseUrlAdmin = 'http://localhost:8000/admin/api/pages';
+  // private token = '1892c9d1bc5f209145b7420a0dbdfbb2';
+  // // GET Page
+  // getPageDataSuluAuthAdmin(pageId: string, locale: string, webspace: string): Observable<any> {
+  //   if (!this.token) {
+  //     console.error('Authorization token is missing!');
+  //     return new Observable((observer) => {
+  //       observer.error('Authorization token is missing!');
+  //       observer.complete();
+  //     });
+  //   }
+
+  //   const url = `${this.baseUrlAdmin}/${pageId}?locale=${locale}&webspace=${webspace}`;
+  //   return this.http.get(url, {
+  //     headers: this.getHeaders(),
+  //   });
+  // }
+
+  // // PUT Page
+  // updatePage(pageId: string, data: any, locale: string, webspace: string): Observable<any> {
+  //   const url = `${this.baseUrlAdmin}/${pageId}?locale=${locale}&webspace=${webspace}&action=publish`;
+  //   return this.http.put(url, data, {
+  //     headers: this.getHeaders(),
+  //   });
+  // }
+
+  // // POST Preview Update
+  // updatePreview(pageId: string, locale: string, webspace: string): Observable<any> {
+  //   const url = `http://localhost:8000/admin/preview/update?locale=${locale}&webspaceKey=${webspace}&provider=pages&id=${pageId}`;
+  //   return this.http.post(url, null, {
+  //     headers: this.getHeaders(),
+  //   });
+  // }
+
+  // private getHeaders(): HttpHeaders {
+  //   return new HttpHeaders({
+  //     Authorization: `Bearer ${this.token}`,
+  //     'Content-Type': 'application/json',
+  //   });
+  // }
 
 }
