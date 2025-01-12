@@ -1,1 +1,35 @@
-<p>api-sulu-auth-admin works!</p>
+<div *ngIf="pageData; else loading">
+  <h1>Modifier la page</h1>
+
+  <form>
+    <div>
+      <label for="title">Titre :</label>
+      <input id="title" type="text" [(ngModel)]="pageData.title" name="title" placeholder="Entrez le titre" />
+    </div>
+
+    <div>
+      <label for="url">Path :</label>
+      <input id="url" type="text" [ngModel]="pageData.url" name="url" readonly />
+    </div>
+
+    <div>
+      <label for="article">Contenu :</label>
+      <textarea id="article" [(ngModel)]="pageData.article" name="article" rows="5"
+        placeholder="Entrez le contenu"></textarea>
+    </div>
+
+    <button type="button" (click)="updatePage()">Enregistrer les modifications</button>
+  </form>
+
+  <div>
+    <h3>Aperçu :</h3>
+    <p><strong>Titre :</strong> {{ pageData?.title }}</p>
+    <p><strong>Path :</strong> {{ pageData?.url }}</p>
+    <p><strong>Contenu :</strong></p>
+    <div [innerHTML]="pageData?.article"></div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Chargement des données...</p>
+</ng-template>

@@ -74,11 +74,22 @@ export class ServiceService {
   }
 
 
+  // with cookie
+
   private apiUrlSuluAuth = 'http://localhost:8000/admin/api/pages';
   // Méthode pour récupérer les données d'une page spécifique
   getPageDataApiSulu(pageId: string, locale: string): Observable<any> {
     const url = `${this.apiUrlSuluAuth}/${pageId}?locale=${locale}`;
     return this.http.get(url, {
+      withCredentials: true, // Inclure les cookies pour l'authentification
+    });
+  }
+
+  // update 
+  // Méthode PUT pour mettre à jour les données
+  updatePageDataApiSulu(pageId: string, updatedData: any, locale: string, webspace: string): Observable<any> {
+    const url = `${this.apiUrlSuluAuth}/${pageId}?locale=${locale}&webspace=${webspace}`;
+    return this.http.put(url, updatedData, {
       withCredentials: true, // Inclure les cookies pour l'authentification
     });
   }
